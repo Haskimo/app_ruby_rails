@@ -1,0 +1,10 @@
+<!-- # app/views/books/index.html.erb -->
+<h1>Liste des livres</h1>
+<% @les_livres.each do |livre| %>
+  <p><a href="/books/<%= livre.id %>"><%= livre.title %></a></p>
+<% end %>
+
+<%= form_tag "/books", method: "post" do %>
+  <input type="text" name="title" />
+  <input type="submit" value="Ajouter le livre" />
+<% end %>

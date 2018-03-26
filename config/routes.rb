@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+
   root 'pages#home'
-  get 'castor' => 'pages#home'
-  get 'page' => 'pages#page'
-#get 'pages/home'
+  get 'castor' => 'pages#home' #Controller castor du fichier HTML pages#home
+  get 'page' => 'pages#page' #Controller page du fichier HTML pages#page
+
+  get 'books' => 'books#index' #Controller books du fichier HTML books#index
+  post 'books' => 'books#create' #Formulaire vers la route books
+  get 'books/:id' => 'books#show'
+  patch 'books/:id' => 'books#update' #Methode pour modifier des données
+  delete 'books/:id' => 'books#destroy' #Methode pour supprimer des données
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
